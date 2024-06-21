@@ -1,7 +1,4 @@
 document.getElementById('generateBtn').addEventListener('click', generateValues);
-document.getElementById('downloadOut').addEventListener('click', () => downloadFile('out'));
-document.getElementById('downloadTxt').addEventListener('click', () => downloadFile('txt'));
-document.getElementById('downloadCsv').addEventListener('click', () => downloadFile('csv'));
 
 let generatedData = [];
 
@@ -28,6 +25,18 @@ function generateValues() {
     }
 
     alert(`Generated ${limit} entries.`);
+    
+    // Create download buttons after generation
+    createDownloadButtons();
+}
+
+function createDownloadButtons() {
+    const downloadArea = document.getElementById("downloadArea");
+    downloadArea.innerHTML = `
+        <button id="downloadOut" onclick="downloadFile('out')"><i class="fas fa-download"></i> Download .out</button>
+        <button id="downloadTxt" onclick="downloadFile('txt')"><i class="fas fa-download"></i> Download .txt</button>
+        <button id="downloadCsv" onclick="downloadFile('csv')"><i class="fas fa-download"></i> Download .csv</button>
+    `;
 }
 
 function downloadFile(format) {
@@ -44,7 +53,8 @@ function downloadFile(format) {
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+
+    // Display download link directly for better UX
+    const downloadArea = document.getElementById("downloadArea");
+    downloadArea.innerHTML += `<a href="${link.href}" download="${filename}"><i class="fas fa-download"></i> Download ${format.toUpperCase()}</a>`;
 }

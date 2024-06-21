@@ -25,7 +25,11 @@ function generateValues() {
     }
 
     alert(`Generated ${limit} entries.`);
-    
+
+    if (!iccid || !imsi || !sfEuimidDec || !limit || isNaN(limit) || !/^\d+$/.test(iccid.toString()) || !/^\d+$/.test(imsi.toString()) || !/^\d+$/.test(sfEuimidDec.toString())) {
+        displayError("Please enter valid numeric values in all fields.");
+        return;
+    }    
     // Create download buttons after generation
     createDownloadButtons();
 }
@@ -59,4 +63,9 @@ function downloadFile(format) {
     downloadBtn.href = link.href;
     downloadBtn.download = filename;
     downloadBtn.click();
+}
+
+function displayError(message) {
+    const downloadArea = document.getElementById("downloadArea");
+    downloadArea.innerHTML = `<div class="error-message">${message}</div>`;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>USCC SIM Genaretor</h1>
+        <form id="generatorForm">
+            <label for="iccid">ICCID (Start Range):</label>
+            <input type="text" id="iccid" name="iccid" required>
+            <label for="imsi">IMSI (Start Range):</label>
+            <input type="text" id="imsi" name="imsi" required>
+            <label for="sf_euimid_dec">SF_EUIMID_DEC (Start Range):</label>
+            <input type="text" id="sf_euimid_dec" name="sf_euimid_dec" required>
+            <label for="limit">Limit:</label>
+            <input type="number" id="limit" name="limit" required>
+            <button type="button" id="generateBtn">Generate</button>
+        </form>
+        <div class="download-buttons">
+            <button id="downloadOut">Download .out</button>
+            <button id="downloadTxt">Download .txt</button>
+            <button id="downloadCsv">Download .csv</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

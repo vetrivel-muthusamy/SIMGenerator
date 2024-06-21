@@ -23,7 +23,7 @@ function generateValues() {
         const currentICCID = iccid + BigInt(i);
         const currentIMSI = imsi + BigInt(i);
         const currentSF_EUIMID_DEC = sfEuimidDec + BigInt(i);
-        const data = `${currentICCID}|${eki}|${currentIMSI}|${puk1}|${puk2}|${pin1}|${currentSF_EUIMID_DEC}|${simVersion}`;
+        const data = `${currentICCID}|${eki}|${currentIMSI}|${puk1}|${puk2}|${pin1}|${pin2}|${currentSF_EUIMID_DEC}|${simVersion}`;
         generatedData.push(data);
     }
 

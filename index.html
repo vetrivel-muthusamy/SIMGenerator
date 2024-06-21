@@ -28,6 +28,13 @@
                 <input type="number" id="limit" name="limit" required>
             </div>
             <button type="button" id="generateBtn"><i class="fas fa-cog"></i> Generate</button>
+            <div id="messageModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <p id="modalMessage"></p>
+                </div>
+            </div>
+        
         </form>
 
         <div id="downloadArea" class="download-buttons">

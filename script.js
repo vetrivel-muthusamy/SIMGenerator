@@ -54,7 +54,9 @@ function downloadFile(format) {
     link.href = URL.createObjectURL(blob);
     link.download = filename;
 
-    // Display download link directly for better UX
-    const downloadArea = document.getElementById("downloadArea");
-    downloadArea.innerHTML += `<a href="${link.href}" download="${filename}"><i class="fas fa-download"></i> Download ${format.toUpperCase()}</a>`;
+    // **Update existing button text and href instead of creating a new one**
+    const downloadBtn = document.getElementById(`download${format.toUpperCase()}`);
+    downloadBtn.href = link.href;
+    downloadBtn.download = filename;
+    downloadBtn.click();
 }

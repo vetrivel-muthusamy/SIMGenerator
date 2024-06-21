@@ -19,15 +19,20 @@ form {
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+.input-group label {
+    width: 200px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.input-group input {
+    flex: 1;
 }
 
 button {
@@ -42,4 +47,26 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#downloadArea {
+    text-align: center; /* Center the download links */
+}
+
+#downloadArea button,
+#downloadArea a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #28a745; /* Green download button */
+    color: white;
+    text-decoration: none;
+    border: none; /* Remove default border from buttons */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#downloadArea button:hover,
+#downloadArea a:hover {
+    background-color: #218838; /* Darker green on hover */
 }
